@@ -267,7 +267,6 @@ def viewHistoryOfMember():
                                  dates=dates, totalamts=totalamts)
 
 
-if __name__ == '__main__':
-    app.run(port = 4096, debug=True)
 
-app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True, use_reloader=True)
