@@ -1,0 +1,13 @@
+3NF Table Descriptions
+
+Member(MemberID, MemberName, Gender, ContactNo, Email, Address)
+----> MemberID with value '0' is reserved as a NULL value (for non-members)
+
+Service(*Type, Price)
+
+Transaction(*InvoiceID, MemberID, Date, Name, TotalAmount)
+                                                              
+TransactionDetails(*InvoiceID, *Type) -> composite key as 1 invoice can contain > 1 service
+
+ER Diagram
+Member -< Transaction -< TransactionDetails >- Service

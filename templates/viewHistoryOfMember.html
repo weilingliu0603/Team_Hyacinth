@@ -1,0 +1,27 @@
+<html>
+
+<h1><a href="{{url_for('home')}}"><img src="{{ url_for('static', filename='HBS.png') }}" alt="Hyacinth Beauty Salon" height= "231" width = "384" ></a></h1>
+
+<h2> History of Member</h2>
+<p> ID: {{ ID }}</p>
+<p> Name: {{ name }}</p>
+
+<table border="1">
+       <tr bgcolor="red">
+          <td><font color="white"><div align="center"><strong>InvoiceID</strong></div></td>
+          <td><font color="white"><div align="center"><strong>Date</strong></div></td>
+          <td><font color="white"><div align="center"><strong>Services</strong></div></td>
+          <td><font color="white"><div align="center"><strong>Total Amount</strong></div></td>
+        </tr>
+      {% for x in range(invoices|length) %}
+ 
+      <tr>
+        <td>{{ invoices[x] }}</td>
+        <td align="right">{{ dates[x] }}</td>
+        <td align="right">{{ services[x] }}</td>
+        <td align="right">{{ totalamts[x] }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+
+</html>

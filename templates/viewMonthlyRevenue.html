@@ -1,0 +1,30 @@
+<html>
+<title>View Monthly Revenue</title>
+
+<h1><a href="{{url_for('home')}}"><img src="{{ url_for('static', filename='HBS.png') }}" alt="Hyacinth Beauty Salon" height= "231" width = "384" ></a></h1>
+<head>
+<style>
+input:invalid{
+	border: 2px dashed red;
+}
+
+input:valid{
+	border: 2px solid green;
+}
+fieldset {
+	width: 300px;
+}
+</style>
+</head>
+<body>
+<h2> View Monthly Revenue </h2>
+<form action="{{url_for('viewRevenueForMonth')}}" method="POST">
+	<label for="month">Enter a month (MM):</label>
+	<input type="text" id="month" required name="month"><br><br>
+	<label for="year">Enter a year (YYYY):</label>
+	<input type="text" id="year" required name="year"><br><br>
+	<input type="submit" value="Submit">
+</form>
+</body>
+
+</html>

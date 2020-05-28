@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>Homepage</title>
+</head>
+
+<h1><a href="{{url_for('home')}}"><img src="{{ url_for('static', filename='HBS.png') }}" alt="Hyacinth Beauty Salon" height= "231" width = "384" ></a></h1>
+<body>
+     <table height="300">
+	     <tr>
+		     <th height='30'><p><div align="left"><p>1. Add a new member</p></th></div> 
+			 <th height='30'><p><div align="left">2. Update a member's email/mobile no.</div></p></th>
+			 <th height='30'><p><div align="left">3. Add a new business transaction</div></p></th>
+		 </tr>
+		 <tr>
+			 <td width="300"><a href="{{url_for('add')}}"><img src="{{ url_for('static', filename='AddMember.png') }}" alt="Add New Member" width="250" height="250" ></a></td>
+			 <td width="300"><a href="{{url_for('update')}}"><img src="{{ url_for('static', filename='UpdateDetails.png') }}" alt="Update Member's Details" width="250" height="250" ></a></td>
+			 <td width="300"><a href="{{url_for('addTransaction')}}"><img src="{{ url_for('static', filename='AddTransaction.png') }}" alt="Add Transaction" width="250" height="250" ></a></td>
+		 </tr>
+		 <tr>
+		 <td height = "30"></td>
+		 </tr>
+		 <tr>
+		     <th height='30'><p><div align="left">4. View daily transactions</div></p></th>
+			 <th height='30'><p><div align="left">5. View monthly sales revenue</div></p></th>
+			 <th height='30'><p><div align="left">6. View member's transaction history</div></p></th>
+		 </tr>
+		 <tr>
+			 <td width="300"><a href="{{url_for('viewDailyTransactions')}}"><img src="{{ url_for('static', filename='ViewDailyTransactions.png') }}" alt="View Daily Transactions" width="250" height="250" ></a></td>
+			 <td width="300"><a href="{{url_for('viewMonthlyRevenue')}}"><img src="{{ url_for('static', filename='ViewRevenue.png') }}" alt="View Monthly Revenue" width="250" height="250" ></a></td>
+			 <td width="300"><a href="{{url_for('viewMemberHistory')}}"><img src="{{ url_for('static', filename='ViewMemberHist.png') }}" alt="ViewMemberHist" width="250" height="250" ></a></td>
+	 </table>
+</body>
+</html>

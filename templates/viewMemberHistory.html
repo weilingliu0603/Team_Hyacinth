@@ -1,0 +1,31 @@
+<html>
+<title>View Member History</title>
+
+<h1><a href="{{url_for('home')}}"><img src="{{ url_for('static', filename='HBS.png') }}" alt="Hyacinth Beauty Salon" height= "231" width = "384" ></a></h1>
+<head>
+<style>
+input:invalid{
+	border: 2px dashed red;
+}
+
+input:valid{
+	border: 2px solid green;
+}
+fieldset {
+	width: 300px;
+}
+</style>
+</head>
+<body>
+<h2> View Member History </h2>
+
+<p> Range of valid Member IDs: {{ID1}} - {{ID2}}</p>
+
+<form action="{{url_for('viewHistoryOfMember')}}" method="POST">
+	<label for="ID">Member ID:</label>
+	 <input type="number" required id="ID" name="ID" min={{ID1}} max={{ID2}}><br><br>
+	<input type="submit" value="Submit">
+</form>
+</body>
+
+</html>

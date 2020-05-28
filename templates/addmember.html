@@ -1,0 +1,41 @@
+<html>
+<head>
+	<title>Add member</title>
+<style>
+input:invalid{
+	border: 2px dashed red;
+}
+
+input:valid{
+	border: 2px solid green;
+}
+
+fieldset {
+	width: 150px;
+}
+</style>
+</head>
+<h1><a href="{{url_for('home')}}"><img src="{{ url_for('static', filename='HBS.png') }}" alt="Hyacinth Beauty Salon" height= "231" width = "384" ></a></h1>
+
+<h2>Add a new member</h2>
+
+<p> Next available Member ID: {{ID}}</p>
+
+<form action="{{ url_for('addMember') }}" method="POST">
+     <label for="name">Name:</label>
+	 <input type="text" required id="name" name="name" maxlength='128'><br><br>
+	 <fieldset>
+		<legend>Gender:</legend>
+		<input type="radio" required id="male" name="gender" value="M"><label for="male" checked>Male</label>
+		<input type="radio" required id="female" name="gender" value="F"><label for="female">Female</label>
+	</fieldset><br>
+	 <label for="contact">Contact:</label>
+	 <input type="number" required id="contact" name="contact" min="10000000" max="99999999"><br><br>
+	 <label for="email">Email:</label>
+	 <input type="text" required id="email" name="email" maxlength='64'><br><br>
+	 <label for="address">Address:</label>
+	 <input type="text" required  id="address" name="address" maxlength='128'><br><br>
+	 <input type="submit" value="Submit">
+</form>
+</html>
+

@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>Add transaction</title>
+<style>
+input:invalid{
+	border: 2px dashed red;
+}
+
+input:valid{
+	border: 2px solid green;
+}
+fieldset {
+	width: 300px;
+}
+</style>
+</head>
+
+<h1><a href="{{url_for('home')}}"><img src="{{ url_for('static', filename='HBS.png') }}" alt="Hyacinth Beauty Salon" height= "231" width = "384" ></a></h1>
+
+<h2>Add new transaction</h1>
+<p> Next available Transaction ID: {{IID}}</p>
+<form action="{{url_for('addNewTransaction')}}" method="POST">
+     <label for="ID">MemberID (Input 0 if Non-Member):</label>
+	 <input type="number" id="ID" required name="ID" min='0' max={{maxID}}><br><br>
+	 <label for="fullname">Name:</label>
+	 <input type="text" id="fullname" name="fullname" required maxlength='128'><br><br>
+	 <label for="date">Date:</label>
+	 <input type="date" id="date" name="date" required><br><br>
+	 <fieldset>
+	 <p><b><u>Tick for the service/s done</u></b></p>
+		<input type="checkbox" id="1" name="check1" value='1'>
+		<label for="CutShort">Cut (short length) -- $35.00 </label><br>
+		<input type="checkbox" id="2" name="check2" value='2'>
+		<label for="CutMedium">Cut (medium length) -- $40.00 </label><br>
+		<input type="checkbox" id="3" name="check3" value='3'>
+		<label for="CutLong">Cut (long length) -- $45.00 </label><br>
+		<input type="checkbox" id="4" name="check4" value='4'>
+		<label for="Colour">Colour -- $100 </label><br>
+		<input type="checkbox" id="5" name="check5" value='5'>
+		<label for="LightHalf">Highlight (half head) -- $150.00</label><br>
+		<input type="checkbox" id="6" name="check6" value='6'>
+		<label for="LightFull">Highlight (full head) -- $200.00</label><br>
+		<input type="checkbox" id="7" name="check7" value='7'>
+		<label for="Perm">Perm -- $200.00 </label><br>
+		<input type="checkbox" id="8" name="check8" value='8'>
+		<label for="Rebond">Rebond -- $180.00</label><br>
+		<input type="checkbox" id="9" name="check9" value='9'>
+		<label for="Treatment">Treatment -- $80.00</label><br><br>
+	</fieldset>
+	 <input type="submit" value="Submit">
+</form>
+</html>

@@ -1,0 +1,28 @@
+<html>
+<title>View Transactions</title>
+
+<h1><a href="{{url_for('home')}}"><img src="{{ url_for('static', filename='HBS.png') }}" alt="Hyacinth Beauty Salon" height= "231" width = "384" ></a></h1>
+<head>
+<style>
+input:invalid{
+	border: 2px dashed red;
+}
+
+input:valid{
+	border: 2px solid green;
+}
+fieldset {
+	width: 300px;
+}
+</style>
+</head>
+<body>
+<h2> View Daily Transactions </h2>
+<form action="{{url_for('viewTransactionOnDate')}}" method="POST">
+	<label for="date">Enter a date (YYYY-MM-DD) to view daily transactions:</label>
+	<input type="date" id="date" required name="date"><br><br>
+	<input type="submit" value="Submit">
+</form>
+</body>
+
+</html>

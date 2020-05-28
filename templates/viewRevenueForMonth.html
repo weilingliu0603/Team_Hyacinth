@@ -1,0 +1,16 @@
+<html>
+
+<h1><a href="{{url_for('home')}}"><img src="{{ url_for('static', filename='HBS.png') }}" alt="Hyacinth Beauty Salon" height= "231" width = "384" ></a></h1>
+
+<p>Revenue for Year {{ year }}, month {{ month }}</p>
+
+<table border="1">
+       <tr bgcolor="yellow">
+          <td><font color="black"><div align="center"><strong>Revenue</strong></div></td>
+        </tr>
+      <tr>
+        <td>{{ revenue }}</td>
+      </tr>
+    </table>
+
+</html>

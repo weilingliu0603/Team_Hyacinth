@@ -1,0 +1,29 @@
+<html>
+
+<h1><a href="{{url_for('home')}}"><img src="{{ url_for('static', filename='HBS.png') }}" alt="Hyacinth Beauty Salon" height= "231" width = "384" ></a></h1>
+
+<p>Transaction(s) on {{ ondate }}</p>
+
+<table border="1">
+       <tr bgcolor="blue">
+          <td><font color="white"><div align="center"><strong>InvoiceID</strong></div></td>
+          <td><font color="white"><div align="center"><strong>MemberID</strong></div></td>
+          <td><font color="white"><div align="center"><strong>Date</strong></div></td>
+          <td><font color="white"><div align="center"><strong>Name</strong></div></td>
+          <td><font color="white"><div align="center"><strong>Total Amount</strong></div></td>
+		  <td><font color="white"><div align="center"><strong>Services</strong></div></td>
+        </tr>
+      {% for x in range(rows|length) %}
+ 
+      <tr>
+        <td>{{ rows[x]['InvoiceID'] }}</td>
+        <td align="right">{{ rows[x]['MemberID'] }}</td>
+        <td align="right">{{ rows[x]['Date'] }}</td>
+        <td align="right">{{ rows[x]['Name'] }}</td>
+        <td align="right">{{ rows[x]['TotalAmount'] }}</td>
+		<td align="right">{{ services[x] }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+
+</html>
